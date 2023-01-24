@@ -1,13 +1,14 @@
 # SpringBoot microservices project
 
 # Current services:
-- Customer service
-- Fraud service
-- Notification service
+- Customer service **(port 8080)**
+- Fraud service **(port 8081)**
+- Notification service **(port 8082)**
 
 # Other features:
-- Eureka Server (to list all services)
-- API Gateway (currently only for 'Customer service' on port 8083)
-- Zipkin (dockerized) and Micrometer for tracing
+- Eureka Server (to list all services) **(port 8761)**
+- API Gateway (currently only for 'Customer service') **(port 8083)**
+- RabbitMQ **(port 5672 - where services will connect) (port 15672 - management board)**
+- Zipkin (dockerized) and Micrometer for tracing **(port 9411)**
 - Feign Client
-- All services are interacting with a MySQL database (dockerized)
+- All services are interacting with a MySQL database (dockerized) **(port 3307)**
