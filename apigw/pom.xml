@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>customer</artifactId>
+    <artifactId>apigw</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -19,26 +19,13 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
-        <!-- EUREKA CLIENT DEPENDENCY-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-
-        <!-- ZIPKIN DEPENDENCIES -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -60,25 +47,6 @@
             <artifactId>loki-logback-appender</artifactId>
             <version>1.3.2</version>
             <scope>runtime</scope>
-        </dependency>
-
-        <!-- RABBIT MQ DEPENDENCIES -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-amqp</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>it.peppe</groupId>
-            <artifactId>amqp</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <!-- CLIENTS DEPENDENCIES -->
-        <dependency>
-            <groupId>it.peppe</groupId>
-            <artifactId>clients</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 
