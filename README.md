@@ -12,3 +12,6 @@
 - Zipkin (dockerized) and Micrometer for tracing **(port 9411)**
 - Feign Client
 - All services are interacting with a MySQL database (dockerized) **(port 3307)**
+
+# RabbitMQ flow:
+- Customer service -> Fraud service -> Customer service -> QUEUE -> Notification service 
