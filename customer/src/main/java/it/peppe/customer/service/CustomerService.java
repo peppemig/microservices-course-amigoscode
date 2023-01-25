@@ -1,5 +1,6 @@
 package it.peppe.customer.service;
 
+import it.peppe.amqp.RabbitMQMessageProducer;
 import it.peppe.clients.fraud.FraudCheckResponse;
 import it.peppe.clients.fraud.FraudClient;
 import it.peppe.clients.notification.NotificationClient;
@@ -24,7 +25,7 @@ public class CustomerService {
     private FraudClient fraudClient;
 
     @Autowired
-    private NotificationClient notificationClient;
+    private RabbitMQMessageProducer rabbitMQMessageProducer;
 
     public void registerCustomer(CustomerRegistrationRequest request) {
         Customer customer = Customer.builder()
@@ -42,12 +43,17 @@ public class CustomerService {
         }
 
         // SEND NOTIFICATION UPON REGISTRATION
-        notificationClient.sendNotification(
-                new NotificationRequest(
-                        customer.getId(),
-                        customer.getEmail(),
-                        String.format("Hi %s, welcome to Peppeservices...",customer.getFirstName())
-                )
+        // CREATE NOTIFICATION FIRST THEN PUBLISH IT TO EXCHANGE
+        NotificationRequest notificationRequest = new NotificationRequest(
+                customer.getId(),
+                customer.getEmail(),
+                String.format("Hi %s, welcome to Peppeservices...",customer.getFirstName())
+        );
+
+        rabbitMQMessageProducer.publish(
+                notificationRequest,
+                "internal.exchange",
+                "internal.notification.routing-key"
         );
 
     }
