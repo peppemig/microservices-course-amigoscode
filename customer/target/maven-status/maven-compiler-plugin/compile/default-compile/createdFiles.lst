@@ -1,0 +1,8 @@
+it\peppe\customer\repository\CustomerRepository.class
+it\peppe\customer\service\CustomerService.class
+it\peppe\customer\controller\CustomerController.class
+it\peppe\customer\model\Customer$CustomerBuilder.class
+it\peppe\customer\model\Customer.class
+it\peppe\customer\request\CustomerRegistrationRequest.class
+it\peppe\customer\CustomerApplication.class
+it\peppe\customer\configuration\CustomerConfig.class

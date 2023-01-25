@@ -1,0 +1,4 @@
+it\peppe\clients\notification\NotificationRequest.class
+it\peppe\clients\fraud\FraudCheckResponse.class
+it\peppe\clients\notification\NotificationClient.class
+it\peppe\clients\fraud\FraudClient.class

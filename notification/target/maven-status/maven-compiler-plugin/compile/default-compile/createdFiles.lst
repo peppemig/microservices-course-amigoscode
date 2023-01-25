@@ -1,0 +1,8 @@
+it\peppe\notification\controller\NotificationController.class
+it\peppe\notification\NotificationConfig.class
+it\peppe\notification\service\NotificationService.class
+it\peppe\notification\NotificationApplication.class
+it\peppe\notification\rabbitmq\NotificationConsumer.class
+it\peppe\notification\model\Notification.class
+it\peppe\notification\model\Notification$NotificationBuilder.class
+it\peppe\notification\repository\NotificationRepository.class
