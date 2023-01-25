@@ -14,4 +14,8 @@
 - All services are interacting with a MySQL database (dockerized) **(port 3307)**
 
 # RabbitMQ flow:
-- Customer service -> Fraud service -> Customer service -> QUEUE -> Notification service 
+- Customer service -> Fraud service -> Customer service -> QUEUE -> Notification service
+
+# Maven settings:
+- Standard modules ('clients' and 'amqp') will use standard Maven
+- Other actual microservices will use Spring Boot Maven Plugin (repackage) (see microservices' pom.xml)
